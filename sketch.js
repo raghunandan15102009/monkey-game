@@ -33,6 +33,11 @@ function draw() {
       monkey.velocityY = -12;
     }
   }
+  if(gameState!=END){
+   survivalTime = Math.ceil(frameCount / frameRate());
+  }else{
+   survivalTime=survivalTime+0;
+  }  
   monkey.velocityY = monkey.velocityY + 1;
   monkey.collide(ground);
   var select = Math.round(random(1, 2));
@@ -73,7 +78,6 @@ function draw() {
 
   textSize(20);
   fill("brown")
-  survivalTime = Math.ceil(frameCount / frameRate());
   text("survivalTime:" + survivalTime, 180, 50);
 
 }
